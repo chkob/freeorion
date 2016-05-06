@@ -52,6 +52,12 @@ target_link_libraries(freeoriond
     ${CMAKE_THREAD_LIBS_INIT}
 )
 
+set_target_properties(freeoriond
+    PROPERTIES
+    CXX_STANDARD 11
+    CXX_STANDARD_REQUIRED YES
+)
+
 install(
     TARGETS freeoriond
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

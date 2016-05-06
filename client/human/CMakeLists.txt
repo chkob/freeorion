@@ -193,6 +193,12 @@ target_compile_options(
     $<$<CXX_COMPILER_ID:gnu>:-fvisibility=hidden>
 )
 
+set_target_properties(freeorion
+    PROPERTIES
+    CXX_STANDARD 11
+    CXX_STANDARD_REQUIRED YES
+)
+
 target_link_libraries(freeorion
     ${freeorion_LINK_LIBS}
 )
