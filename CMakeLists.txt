@@ -5,6 +5,7 @@ if(POLICY CMP0044)
 endif()
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_HOME_DIRECTORY}/cmake ${CMAKE_HOME_DIRECTORY}/GG/cmake)
+set(CMAKE_CXX_EXTENSIONS OFF CACHE BOOL "Set if additional compiler specific extension should be requested for this build")
 set(CMAKE_OSX_DEPLOYMENT_TARGET 10.7 CACHE STRING "Set the minimum OSX deployment target version")
 set(CMAKE_OSX_ARCHITECTURES i386 CACHE STRING "Set the architecture the universal binaries for OSX should be built for")
 set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "Make generated makefile more verbose")
