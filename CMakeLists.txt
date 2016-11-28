@@ -74,6 +74,7 @@ if (WIN32)
     endif ()
 elseif (APPLE)
     set (CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/Xcode/dep/")
+    set (CMAKE_FRAMEWORK_PATH "${CMAKE_SOURCE_DIR}/Xcode/dep/Frameworks")
     add_definitions(-DFREEORION_MACOSX)
 elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
     add_definitions(
