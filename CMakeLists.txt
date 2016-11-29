@@ -140,6 +140,10 @@ find_package(Boost ${MINIMUM_BOOST_VERSION}
 find_package(ZLIB REQUIRED)
 find_package(Freetype REQUIRED)
 
+if(APPLE)
+    find_library(CORE_FOUNDATION_LIBRARY CoreFoundation)
+endif()
+
 
 ########################################
 # Build common code library            #
@@ -362,6 +366,7 @@ target_link_libraries(freeorioncommon
     ${Boost_SYSTEM_LIBRARY}
     ${Boost_THREAD_LIBRARY}
     ${ZLIB_LIBRARIES}
+    ${CORE_FOUNDATION_LIBRARY}
 )
 
 set_target_properties(freeorioncommon
