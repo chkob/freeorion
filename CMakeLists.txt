@@ -377,6 +377,14 @@ set_target_properties(freeorioncommon
     CXX_STANDARD_REQUIRED YES
 )
 
+if(APPLE)
+    set_target_properties(freeorioncommon
+        PROPERTIES
+        LINK_FLAGS "-undefined dynamic_lookup"
+    )
+endif()
+
+
 ########################################
 # Recurse Into Sources                 #
 ########################################
