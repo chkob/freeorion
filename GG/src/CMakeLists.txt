@@ -1,7 +1,13 @@
 message("-- Configuring GiGi")
 
 
-set(GiGi_LINK_LIBS ${Boost_LIBRARIES} ${OPENGL_LIBRARIES} ${FREETYPE_LIBRARIES})
+set(GiGi_LINK_LIBS
+    ${Boost_LIBRARIES}
+    ${OPENGL_LIBRARIES}
+    ${GLEW_LIBRARIES}
+    ${FREETYPE_LIBRARIES}
+)
+
 if (PNG_FOUND)
     list(APPEND GiGi_LINK_LIBS ${PNG_LIBRARIES})
 endif ()

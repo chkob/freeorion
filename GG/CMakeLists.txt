@@ -80,11 +80,13 @@ set(Boost_USE_STATIC_LIBS ${USE_STATIC_LIBS})
 find_package(Boost ${MINIMUM_BOOST_VERSION} COMPONENTS chrono date_time filesystem regex signals system thread log REQUIRED)
 
 find_package(OpenGL REQUIRED)
-find_package(Freetype REQUIRED)
+find_package(GLEW REQUIRED)
 
 if (NOT OPENGL_GLU_FOUND)
     message(FATAL_ERROR "OpenGL GLU library not found.")
 endif ()
+
+find_package(Freetype REQUIRED)
 
 if(ENABLE_PNG_TEXTURES)
     find_package(PNG REQUIRED)
@@ -104,6 +106,7 @@ include_directories(
     SYSTEM
     ${Boost_INCLUDE_DIRS}
     ${OPENGL_INCLUDE_DIR}
+    ${GLEW_INCLUDE_DIRS}
     ${FREETYPE_INCLUDE_DIRS}
     ${PNG_INCLUDE_DIR}
     ${TIFF_INCLUDE_DIR}
